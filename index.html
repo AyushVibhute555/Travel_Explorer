@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photo + Weather Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Search a destination (e.g. Paris, Tokyo)" />
+      <button id="searchBtn">Search</button>
+      <select id="perPage" title="Images per page">
+        <option value="6">6</option>
+        <option value="12" selected>12</option>
+        <option value="24">24</option>
+      </select>
+      <div class="chips">
+        <div class="chip" data-query="Paris">Paris</div>
+        <div class="chip" data-query="New York">New York</div>
+        <div class="chip" data-query="Tokyo">Tokyo</div>
+        <div class="chip" data-query="Sydney">Sydney</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="meta">
+    <div id="resultsTitle">Top photos —</div>
+    <div id="subText">Enter a location and click Search</div>
+  </div>
+
+  <main>
+    <section>
+      <div id="photos" class="grid"></div>
+      <div id="pagination"></div>
+    </section>
+
+    <aside id="weatherBox">
+      <div id="weatherTitle" style="font-weight:600; margin-bottom:6px;"></div>
+      <div id="weatherContent"><p>Weather will appear here after you search.</p></div>
+    </aside>
+  </main>
+
+  <!-- modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="backdrop"></div>
+    <div class="modal-inner">
+      <button id="closeModal" class="close">Close</button>
+      <img id="modalImg" src="" alt="full image">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
